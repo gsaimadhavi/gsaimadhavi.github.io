@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<title>Countdown</title>
+<script type="text/javascript">
+var timer=60;
+var min=0;
+var sec=0;
+function starttimer()
+{
+min=parseInt(timer/60);
+sec=parseInt(timer%60);
+if(timer<1)
+{
+window.location="alan.html";
+}
+document.getElementById("time").innerHTML="<b>time left:</b>" +min.toString()+":"+sec.toString();
+timer--;
+setTimeout(function(){
+startTimer();
+},1000);
+}
+</script>
+</head>
+<body onload="startTimer();">
+<div>
+<center><span id="time"></span></center>
+</div>
+
+</body>
+</html>
